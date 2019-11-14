@@ -15,12 +15,12 @@ namespace ChallengeSets
 
         public int Add(int number1, int number2)
         {
-            throw new NotImplementedException();
+            return number1 + number2;
         }
 
         public int GetSmallestNumber(int number1, int number2)
         {
-            throw new NotImplementedException();
+            return number1 <= number2 ? number1 : number2;
         }
 
         public long Multiply(long factor1, long factor2)
