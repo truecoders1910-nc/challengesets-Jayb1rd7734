@@ -17,12 +17,12 @@ namespace ChallengeSets
 
         public bool IsNumberEven(int number)
         {
-            throw new NotImplementedException();
+            return number % 2 == 0 ? true : false;
         }
 
         public bool IsNumberOdd(int num)
         {
-            throw new NotImplementedException();
+            return num % 2 != 0 ? true : false;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
