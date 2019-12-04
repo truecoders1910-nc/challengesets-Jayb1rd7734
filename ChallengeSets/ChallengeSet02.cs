@@ -28,9 +28,16 @@ namespace ChallengeSets
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
             if (numbers == null) return 0;
-            double max = 0, min = 5;
+            bool firstTime = true;
+            double max = 0, min = 0;
             foreach (var item in numbers)
             {
+                if (firstTime)
+                {
+                    max = item;
+                    min = item;
+                    firstTime = false;
+                }
                 max = Math.Max(max, item);
                 min = Math.Min(min, item);
             }
@@ -77,7 +84,11 @@ namespace ChallengeSets
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number > 0)
+            {
+                return number % 2 == 0 ? number / 2 :(number - 1) / 2;
+            }
+            return 0; 
         }
     }
 }
