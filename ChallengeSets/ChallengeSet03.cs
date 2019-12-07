@@ -7,12 +7,23 @@ namespace ChallengeSets
     {
         public bool ArrayContainsAFalse(bool[] vals)
         {
-            throw new NotImplementedException();
+            foreach(var item in vals)
+            {
+                if (item == false) return true;
+            }
+            return false;
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            if (numbers == null) return false;
+            foreach (var item in numbers)
+            {
+                if (item % 2 != 0) sum += item;
+            }
+            if(sum % 2 != 0) return true;
+            return false;
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
