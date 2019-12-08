@@ -54,12 +54,13 @@ namespace ChallengeSets
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            if (divisor == 0) return 0;
+            return Math.Round(dividend / divisor, 4);
         }
 
         public int LastMinusFirst(int[] nums)
         {
-            throw new NotImplementedException();
+            return nums[nums.Length - 1] - nums[0];
         }
         public int[] GetOddsBelow100()
         {
