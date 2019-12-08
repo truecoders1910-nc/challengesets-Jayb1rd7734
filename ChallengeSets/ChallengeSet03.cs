@@ -42,13 +42,14 @@ namespace ChallengeSets
 
         public char GetFirstLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            char[] str = val.ToCharArray();
+            return str[0];
         }
 
         public char GetLastLetterOfString(string val)
         {
-
-            throw new NotImplementedException();
+            char[] str = val.ToCharArray();
+            return str[str.Length-1];
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
