@@ -64,12 +64,20 @@ namespace ChallengeSets
         }
         public int[] GetOddsBelow100()
         {
-            throw new NotImplementedException();
+            List<int> nums = new List<int>();
+            for (int i = 1; i < 100; i += 2)
+            {
+                nums.Add(i);
+            }
+            return nums.ToArray();
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToUpper();
+            }
         }
     }
 }
