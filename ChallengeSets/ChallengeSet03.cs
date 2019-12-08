@@ -28,7 +28,16 @@ namespace ChallengeSets
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            throw new NotImplementedException();
+            char[] pword = password.ToCharArray();
+            bool upper = false, lower = false, num = false;
+            foreach (var item in pword)
+            {
+                if (char.IsUpper(item)) upper = true;
+                if (char.IsLower(item)) lower = true;
+                if (char.IsNumber(item)) num = true;
+            }
+            if (upper && lower && num) return true;
+            return false;
         }
 
         public char GetFirstLetterOfString(string val)
