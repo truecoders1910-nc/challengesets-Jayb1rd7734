@@ -5,12 +5,25 @@ namespace ChallengeSets
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            throw new NotImplementedException();
+            int sum = 0;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                switch(numbers[i] % 2)
+                {
+                    case 0:
+                        sum += numbers[i];
+                        break;
+                    default:
+                        sum -= numbers[i];
+                        break;
+                }
+            }
+            return sum;
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            throw new NotImplementedException();
+           return Math.Min(Math.Min(Math.Min(str3.Length, str4.Length), str2.Length), str1.Length);
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
