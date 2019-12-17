@@ -28,12 +28,12 @@ namespace ChallengeSets
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
         {
-            throw new NotImplementedException();
+            return Math.Min(Math.Min(Math.Min(number3, number4), number2), number1);
         }
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
-            throw new NotImplementedException();
+            biz.Name = "TrueCoders";
         }
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
