@@ -38,17 +38,28 @@ namespace ChallengeSets
 
         public bool CouldFormTriangle(int sideLength1, int sideLength2, int sideLength3)
         {
-            throw new NotImplementedException();
+            if ((sideLength1 + sideLength2) > sideLength3 &&
+                (sideLength1 + sideLength3) > sideLength2 &&
+                (sideLength2 + sideLength3) > sideLength1) return true;
+            return false;
         }
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            double result;
+            if (Double.TryParse(input, out result)) return true;
+            return false;
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            int nullCount = 0;
+            for(int i = 0; i < objs.Length; i++)
+            {
+                if (objs[i] == null) nullCount++;
+            }
+            if (nullCount > objs.Length / 2) return true;
+            return false;
         }
 
         public double AverageEvens(int[] numbers)
