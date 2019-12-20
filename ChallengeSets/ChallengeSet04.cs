@@ -80,6 +80,7 @@ namespace ChallengeSets
 
         public int Factorial(int number)
         {
+            if (number < 0) throw new ArgumentOutOfRangeException();
             if (number == 0) return 1;
             return number * Factorial(number - 1);
         }
