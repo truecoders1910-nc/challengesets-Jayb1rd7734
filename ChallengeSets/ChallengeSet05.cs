@@ -46,17 +46,42 @@ namespace ChallengeSets
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            throw new NotImplementedException();
+            if (words == null) return "";
+            string sentence = "";
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i] == " " || words[i] == "" || words[i] == "  ")
+                    continue;
+                if((i == words.Length - 1))
+                    sentence += (words[i].Trim() + ".");
+                else 
+                    sentence += (words[i].Trim() + " ");
+            }
+            return sentence;
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            List<double> nums = new List<double>();
+            if (elements == null || elements.Count < 4) return new double[0];
+            for (int i = 3; i < elements.Count; i += 4)
+            {
+                nums.Add(elements[i]);
+            }
+            return nums.ToArray();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-            throw new NotImplementedException();
+            if (nums.Length < 2) return false;
+            for (int i = 0; i < (nums.Length - 1); i++)
+            {
+                for (int j = i + 1; j < (nums.Length); j++)
+                {
+                    if (nums[i] + nums[j] == targetNumber) return true;
+                }
+            }
+            return false;
         }
     }
 }
