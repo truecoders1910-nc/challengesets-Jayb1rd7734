@@ -7,12 +7,33 @@ namespace ChallengeSets
     {
         public int CountOfBusinessesWithNegativeNetProfit(List<Business> businesses)
         {
-            throw new NotImplementedException();
+            if (businesses == null || businesses.Count == 0) return 0;
+            int count = 0;
+            foreach (var item in businesses)
+            {
+                if (item.TotalRevenue - item.TotalExpenses < 0) count++;
+            }
+            return count;
         }
 
         public string GetCommaSeparatedListOfProfitableBusinesses(List<Business> businesses)
         {
-            throw new NotImplementedException();
+            string str = "";
+            List<string> list = new List<string>();
+            for(int i = 0; i<businesses.Count; i++)
+            {
+                double one = businesses[i].TotalRevenue;
+                double two = businesses[i].TotalExpenses;
+
+                if (one - two < 1) continue;
+                list.Add(businesses[i].Name);
+            }
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (i != (list.Count - 1)) str += list[i] + ",";
+                else str += list[i];
+            }
+            return str;
         }
 
         public string GetNameOfHighestParentCompany(Business business)
