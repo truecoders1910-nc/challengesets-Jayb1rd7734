@@ -82,7 +82,21 @@ namespace ChallengeSets
 
         public bool EachArrayInJaggedArrayContainsTargetNumber(int[][] numbers, int targetNumber)
         {
-            throw new NotImplementedException();
+            if(numbers.Length == 0 || numbers == null) return false;
+            int count = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                for(int j = 0; j < numbers[i].Length; j++)
+                {
+                    if (numbers[i][j] == targetNumber)
+                    { 
+                        count += 1;
+                        break;
+                    }
+                }
+            }
+            if (count == numbers.Length) return true;
+            return false;
         }
     }
 }
